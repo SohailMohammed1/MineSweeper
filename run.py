@@ -10,6 +10,9 @@ mine_size = 20
 flag_size = 5
 
 
+# Minesweeper class contains all of the functions
+# partaining to initialisation, adding mines and
+# flags to the board
 class Minesweeper:  # 15/02
     def __init__(self, rows=5, columns=5, mines=10):
         self.rows = rows
@@ -28,6 +31,10 @@ class Minesweeper:  # 15/02
             random_column = random.randint(0, columns - 1)
             if self.board[random_row][random_column] == flag:
                 self.board[random_row][random_column] = mines
+
+# print_board and play functions display board only if the user finds mines
+# instead of flag. Also, the win/ loss conditions are implemented within
+# "play" function
 
     def print_board(self, board):
         for row in board:
@@ -51,6 +58,8 @@ class Minesweeper:  # 15/02
                 self.end_game = True
                 print("You Win!")
 
+# Welcome message is displayed to users when programme is re/ started
+
 
 if __name__ == "__main__":     # 15/02
     username = input("Enter username: \n")
@@ -58,7 +67,7 @@ if __name__ == "__main__":     # 15/02
     print("Hello " + username, ", welcome to Minesweeper! \n")
     print("----------------------------------------------- \n")
     print("Before you get started, there are a few things you must know: \n")
-    print("In order to win, you must accurately find the hidden flags using \n")
+    print("In order to win, you must accurately find the hidden flags via \n")
     print("the coordinates system. \n")
     print("If you find a flag, you may continue inputting coordinates. \n")
     print("If you find 5, you win! \n")
@@ -68,6 +77,11 @@ if __name__ == "__main__":     # 15/02
 
     game = Minesweeper()
     game.print_board(game.mask)
+
+# While loop ensures that users input row/ column
+# as long as mines are not found.
+# The loop also ensures that the correct data has been inputted
+
     while game.end_game is False:
         try:
             row = int(input(f"Enter row 0 - {rows - 1}: "))
@@ -82,7 +96,9 @@ if __name__ == "__main__":     # 15/02
         except ValueError:
             print("Invalid input")
 
-play_again = input("Do you want to restart? Yes or No\n")  # StackOverflow
+# Restart option presented via loop at the end of the game.
+
+play_again = input("Do you want to restart? Yes or No\n")
 
 if play_again == "Yes":
     exec(open("./run.py").read())
