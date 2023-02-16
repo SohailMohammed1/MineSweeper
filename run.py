@@ -1,29 +1,24 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random
 
-
-import random 
-
-#Board features 
+# Variables #
 shadow_space = ' '
 mines = '*'
 flag = 'F'
-rows=5
-columns=5
+rows = 5
+columns = 5
 mine_size = 20
 flag_size = 5
 
 
-class Minesweeper:
-
-    def __init__(self, rows=5, columns=5, mines=10):  #15/02
+class Minesweeper:  # 15/02
+    def __init__(self, rows=5, columns=5, mines=10):
         self.rows = rows
         self.flags_found = 0
         self.columns = columns
         self.mines = mines
         self.board = [[flag for j in range(columns)] for i in range(rows)]
-        self.mask = [[shadow_space for j in range(columns)] for i in range(rows)]
+        self.mask = [[shadow_space for j
+                      in range(columns)] for i in range(rows)]
         self.end_game = False
         self.add_mines_to_board()
 
@@ -41,7 +36,7 @@ class Minesweeper:
                 content_row += f'[{column}]'
             print(f'{content_row}\n')
 
-    def play(self, row, column):                         #15/02
+    def play(self, row, column):                         # 15/02
         if self.end_game:
             return
         if self.board[row][column] == '*':
@@ -56,30 +51,23 @@ class Minesweeper:
                 self.end_game = True
                 print("You Win!")
 
-    
 
-        
-if __name__ == "__main__":   #15/02
-    
-    username = input("Enter username: ")
+if __name__ == "__main__":     # 15/02
+    username = input("Enter username: \n")
 
-    print("Hello "+ username, "welcome to Minesweeper!")
+    print("Hello " + username, ", welcome to Minesweeper! \n")
+    print("----------------------------------------------- \n")
+    print("Before you get started, there are a few things you must know: \n")
+    print("In order to win, you must accurately find the hidden flags using \n")
+    print("the coordinates system. \n")
+    print("If you find a flag, you may continue inputting coordinates. \n")
+    print("If you find 5, you win! \n")
+    print("If you find a mine, however, you lose! \n")
+    print("Goodluck! \n")
+    print("----------------------------------------------- \n")
 
-    print("Before you get started, there are a few things you must know:")
-
-    print("In order to win, you must accurately find the hidden flags using the coordinates system")
-
-    print("If you find a flag, you may continue inputting coordinates. If you find 5, you win!")
-
-    print("If you find a mine, however, you lose!")
-
-    print("Goodluck!")
-    
-
-                           
     game = Minesweeper()
     game.print_board(game.mask)
-    
     while game.end_game is False:
         try:
             row = int(input(f"Enter row 0 - {rows - 1}: "))
@@ -94,7 +82,7 @@ if __name__ == "__main__":   #15/02
         except ValueError:
             print("Invalid input")
 
-play_again = input("Do you want to restart? Yes or No\n") #StackOverflow
+play_again = input("Do you want to restart? Yes or No\n")  # StackOverflow
 
 if play_again == "Yes":
     exec(open("./run.py").read())
