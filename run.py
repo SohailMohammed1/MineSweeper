@@ -56,9 +56,27 @@ class Minesweeper:
                 self.end_game = True
                 print("You Win!")
         
-if __name__ == "__main__":                            #15/02
+if __name__ == "__main__":   #15/02
+    
+    username = input("Enter username: ")
+
+    print("Hello "+ username, "welcome to Minesweeper!")
+
+    print("Before you get started, there are a few things you must know:")
+
+    print("In order to win, you must accurately find the hidden flags using the coordinates system")
+
+    print("If you find a flag, you may continue inputting coordinates. If you find 5, you win!")
+
+    print("If you find a mine, however, you lose!")
+
+    print("Goodluck!")
+    
+
+                           
     game = Minesweeper()
     game.print_board(game.mask)
+    
     while game.end_game is False:
         try:
             row = int(input(f"Enter row 0 - {rows - 1}: "))
