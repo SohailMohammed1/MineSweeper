@@ -55,6 +55,9 @@ class Minesweeper:
             if self.flags_found == flag_size:
                 self.end_game = True
                 print("You Win!")
+
+    
+
         
 if __name__ == "__main__":   #15/02
     
@@ -90,3 +93,10 @@ if __name__ == "__main__":   #15/02
             game.play(row, column)
         except ValueError:
             print("Invalid input")
+
+play_again = input("Do you want to restart? Yes or No\n") #StackOverflow
+
+if play_again == "Yes":
+    exec(open("./run.py").read())
+else:
+    exit()
