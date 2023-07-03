@@ -103,4 +103,4 @@ play_again = input("Do you want to restart? Yes or No\n")
 if play_again == "Yes":
     exec(open("./run.py").read())
 else:
-    exit()
+    exit("Game Over")
