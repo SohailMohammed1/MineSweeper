@@ -77,6 +77,7 @@ if __name__ == "__main__":     # 15/02
 
     game = Minesweeper()
     game.print_board(game.mask)
+    played_coordinates = []
 
 # While loop ensures that users input row/ column
 # as long as mines are not found.
@@ -88,19 +89,35 @@ if __name__ == "__main__":     # 15/02
             while row not in range(rows):
                 print(f"{row} is not a valid option")
                 row = int(input("Enter row: "))
+
             column = int(input(f"Enter column 0 - {columns - 1}: "))
             while column not in range(columns):
                 print(f"{column} is not a valid option")
                 column = int(input("Enter column: "))
+
+            # Check if the coordinates have already been played
+            #Iteration asks for new loops if old ones are inputted twice
+            if (row, column) in played_coordinates:
+                print("You have already played these coordinates.")
+                continue  
+            
+            #Adds new coordinates to list
+            played_coordinates.append((row, column))  
             game.play(row, column)
+
         except ValueError:
             print("Invalid input")
 
+
+
+
 # Restart option presented via loop at the end of the game.
-
-play_again = input("Do you want to restart? Yes or No\n")
-
-if play_again == "Yes":
-    exec(open("./run.py").read())
-else:
-    exit("Game Over")
+while True:
+    play_again = input("Do you want to restart? Yes or No\n")
+    if play_again == "Yes":
+        exec(open("./run.py").read())
+        break
+    elif play_again == "No":
+        exit("Game Over")
+    else:
+        print("Your input was invalid. Please enter either 'Yes' or 'No'.")
