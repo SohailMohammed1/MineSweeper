@@ -101,7 +101,8 @@ This project was deployed via Code institutes mock terminal for Heroku
 - Code institute for deployment terminal
 - Code institute project three example ReadMe file
 - Stackoverflow for restart option
-- ChatGPT, although the code was modified to fit project
+- ChatGPT for bugs 
+
 
 
 
