@@ -96,28 +96,26 @@ if __name__ == "__main__":     # 15/02
                 column = int(input("Enter column: "))
 
             # Check if the coordinates have already been played
-            #Iteration asks for new loops if old ones are inputted twice
+            # Iteration asks for new loops if old ones are inputted twice
             if (row, column) in played_coordinates:
                 print("You have already played these coordinates.")
-                continue  
-            
-            #Adds new coordinates to list
-            played_coordinates.append((row, column))  
+                continue
+
+            # Adds new coordinates to list
+            played_coordinates.append((row, column))
             game.play(row, column)
 
         except ValueError:
             print("Invalid input")
 
 
-
-
-# Restart option presented via loop at the end of the game.
-while True:
-    play_again = input("Do you want to restart? Yes or No\n")
-    if play_again == "Yes":
-        exec(open("./run.py").read())
-        break
-    elif play_again == "No":
-        exit("Game Over")
-    else:
-        print("Your input was invalid. Please enter either 'Yes' or 'No'.")
+# Restart option presented via loop at the end of the game
+    while True:
+        play_again = input("Do you want to restart? Yes or No\n")
+        if play_again == "Yes":
+            exec(open("./run.py").read())
+            break
+        elif play_again == "No":
+            exit("Game Over")
+        else:
+            print("Your input was invalid. Please enter either 'Yes' or 'No'.")

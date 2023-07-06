@@ -53,7 +53,7 @@ I have manually tested this project via several methods:
 
 Due to carelessness, I made the error of not commiting my project therefore some commits look drastically different to others. Due to this, I will give the report for commit "15/02" as well as the bugs I found during this project and what I fixed:
 
-- Main problem was the function were indented properly
+- Main problem was the function were not indented properly
 - Functions were not taking self as first argument
 - Decided to change the game so that win condition was to find 5 flags
 - Figure out if user wins or not, create win/ lose condition and message depending on if user found mine or flag
@@ -61,6 +61,12 @@ Due to carelessness, I made the error of not commiting my project therefore some
 - Fixed incorrect input bug, told user if they put in invalid input
 - 'try' keyword is to prove if user inputted wrong value
 - Board will now expose itself if user finds mine
+
+Bugs fixed by 06/07/2023:
+
+- Users are now unable to input same coordinates twice
+- Users are prompted to give appropriate responses at the end of the game
+- Users are presented with a 'Game Over' message at the end of the game should they choose not to continue
 
 ## **Remaining Bugs**
 
