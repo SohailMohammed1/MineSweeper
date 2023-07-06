@@ -30,6 +30,14 @@ The aim of the game is to locate 5 flags located randomly on the grid. This is d
 
 - ![Screenshot5](./images/validator.png)
 
+- Coordinates validator
+
+- ![Screenshot6](./images/coordinates_validator.png)
+
+- End of game validator
+
+- ![Screenshot7](./images/endgame_validator.png)
+
 ## **Future Features**
 
 - Allow players to play up to 3 games and reveal high score rankings
