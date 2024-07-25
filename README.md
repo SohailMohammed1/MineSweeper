@@ -96,6 +96,10 @@ This project was deployed via Code institutes mock terminal for Heroku
  - Link Heroku app to the repository
  - Click on "Deploy"
 
+## **Live Link** 
+
+This project can be accessed via the following link: https://heroku-app-minesweeper-cf761a298594.herokuapp.com
+
 ## **Credits**
 
 - Code institute for deployment terminal
